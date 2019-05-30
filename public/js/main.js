@@ -1,18 +1,38 @@
-$(document).ready(function () {
-    var element = $("#html-content-holder"); // global variable
-    var getCanvas; // global variable
+$(document).ready(function() {
 
-    html2canvas(element, {
-        onrendered: function (canvas) {
-            $("#previewImage").append(canvas);
-            getCanvas = canvas;
+    // $('.step-2').hide();
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+                $('.view-img img').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
         }
-    });
+        }
+        $("#upload").change(function() {
+            readURL(this);
+        });
+    
+        $('.uploadbtn').on('click', function() {
+            $('#upload').trigger('click');
+        });
 
-    $("#btn-Convert-Html2Image").on('click', function () {
-        var imgageData = getCanvas.toDataURL("image/png");
-        // Now browser starts downloading it instead of just showing it
-        var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-        $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-    });
+  });
+
+
+  $('.save').on('click', function() {
+    $('.step-2').show();
 });
+
+
+    //Save as PDF
+    function myFunction() {
+        window.print();
+    }
+
+
+
