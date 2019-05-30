@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // $('.step-2').hide();
+    $('.step-2').hide();
 
     function readURL(input) {
         if (input.files && input.files[0]) {
