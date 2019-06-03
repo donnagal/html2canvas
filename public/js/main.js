@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    $('.step-2').hide();
 
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -24,10 +23,6 @@ $(document).ready(function() {
   });
 
 
-  $('.save').on('click', function() {
-    $('.step-2').show();
-});
-
 
     //Save as PDF
     function myFunction() {
@@ -36,3 +31,18 @@ $(document).ready(function() {
 
 
 
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+          myPosSize: -1
+        },
+        methods: {
+          increaser: function(){
+            this.myPosSize += 2;
+          },
+          decreaser: function(){
+            this.myPosSize -= 2;
+          }
+        }
+      });

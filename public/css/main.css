@@ -6,13 +6,13 @@
 .thumbnail {
   overflow: hidden;
   margin: auto;
-  width: 900px;
-  height: 600px;
+  width: 1920px;
+  height: 1080px;
 }
 
 .view-img img {
   display: block;
-  width: 900px;
+  width: 1920px;
 }
 
 #upload {
@@ -29,7 +29,7 @@
 }
 
 .img {
-  width: 900px;
+  width: 1920px;
 }
 
 .duotoned--peachy {
@@ -38,7 +38,7 @@
 
 @media print {
   @page {
-    size: 900px 600px;
+    size: 1920px 1080px;
     margin: 0mm;
   }
   .print-hide {

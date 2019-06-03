@@ -21,7 +21,86 @@
 
   <body>
 
+      <div id="app">
+        
 
+          
+
+       
+
+      <div class="print-hide text-center py-10">
+
+          <h1 class="text-xl uppercase mb-16"><strong><em>Filter</em></strong> me image</h1>
+
+          <div class="flex mb-4">
+              <div class="w-1/3">
+                <h3 class="text-lg font-bold mb-3">Step 1:</h3>
+
+          
+                <input type="file" id="upload">
+      
+          
+                <button type="button" class="btn uploadbtn rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
+                bg-gray-500 hover:bg-gray-600 md:text-lg xl:text-base text-white font-semibold 
+                leading-tight shadow-md">Upload</button>
+                
+
+                <p class="text-sm text-gray-600 mt-3 text-center mb-5">    
+                    width: 1920px | height: 1080px
+                </p>
+              </div>
+              <div class="w-1/3">
+                
+          <div class="text-center">
+              <h3 class="text-lg font-bold mb-3">Step 2:</h3>
+              <!-- 
+                        <button class="save rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
+                        bg-gray-600 hover:bg-gray-700 md:text-lg xl:text-base text-white font-semibold 
+                        leading-tight shadow-md"
+                          v-on:click="decreaser">Up</button>
+              
+                        <button class="save rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
+                        bg-gray-600 hover:bg-gray-700 md:text-lg xl:text-base text-white font-semibold 
+                        leading-tight shadow-md"
+                         v-if="" v-on:click="increaser">Down</button> -->
+                         <p class="text-sm mt-4 text-black -ml-32">
+                            Adjust Position <small>optional</small>
+                          </p>
+                         <input class="rounded-lg border px-5 py-3 bg-gray-100 text-gray-700" type="number" v-model="myPosSize">
+                         <button class="save rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
+                         bg-orange-500 hover:bg-orange-600 md:text-lg xl:text-base text-white font-semibold 
+                         leading-tight shadow-md" onclick="myFunction()">Save</button>
+                         
+
+
+                        </div>
+
+                        
+              
+              </div>
+              <div class="w-1/3">
+                <div class="">
+                    <h3 class="text-lg font-bold mb-5">Step 3:</h3>
+                    <p>
+                      <a target="_blank" class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
+                      bg-gray-500 hover:bg-gray-600 
+                      md:text-lg xl:text-base text-white font-semibold 
+                      leading-tight shadow-md"
+                      href="https://pdftoimage.com/">Convert PDF to Image</a>
+                    </p>
+                    <p class="text-sm mt-4 text-gray-500">
+                      <span class="text-black">Or take your own screen-shot</span>
+                      <br>
+                       Command-Shift-4<br>
+                      PC: Windows + Shift + S
+                    </p>
+                </div>
+            </div>
+            </div>
+
+  
+      
+      </div>
 
 
 
@@ -50,7 +129,9 @@
           
           <div class="thumbnail">
             <div class="view-img">
-              <img class="img duotoned--peachy" src="https://images.unsplash.com/photo-1547010487-9b6dee5487cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="">
+              <img class="img duotoned--peachy relative" 
+              :style="{top: myPosSize +'px'}"
+              src="https://images.unsplash.com/photo-1547010487-9b6dee5487cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="">
             </div>
             
             
@@ -59,43 +140,10 @@
     </div>
 
 
-  <div class="print-hide text-center">
-      <h1 class="text-xl uppercase"><strong><em>Filter</em></strong> me image</h1>
+  
 
-      <p class="text-sm text-gray-600 mt-3 text-center mb-5">    
-          width: 900px | height: 600px
-      </p>
-
-      <input type="file" id="upload">
-
-      <button type="button" class="btn uploadbtn rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
-      bg-gray-500 hover:bg-gray-600 md:text-lg xl:text-base text-white font-semibold 
-      leading-tight shadow-md">Upload</button>
       
-      <button class="save rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
-      bg-orange-500 hover:bg-orange-600 md:text-lg xl:text-base text-white font-semibold 
-      leading-tight shadow-md" onclick="myFunction()">Save</button>
-      
-        <div class="step-2">
-            <h3 class="text-lg font-bold mt-10 mb-3">Step 2:</h3>
-            <p>
-              <a target="_blank" class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
-              bg-gray-500 hover:bg-gray-600 
-              md:text-lg xl:text-base text-white font-semibold 
-              leading-tight shadow-md"
-              href="https://pdftoimage.com/">Convert PDF to Image</a>
-            </p>
-            <p class="text-sm mt-4 text-gray-500">
-              <span class="text-black">Or take your own screen-shot</span>
-              <br>
-               Command-Shift-3<br>
-              PC: Windows + Shift + S
-            </p>
-        </div>
   </div>
-
-      
-
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
               
@@ -104,8 +152,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script>
+        
     <script src="js/main.min.js"></script>
   </body>
 
