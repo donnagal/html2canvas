@@ -1,25 +1,16 @@
 ### Basic Usage
 
-After downloading, simply edit the HTML and Sass files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
-Framework is using `https://tailwindcss.com/`
-Site demo `https://template-1-hollywood.netlify.com/`
+After downloading, simply edit the HTML and JS file. Not much going on here. Complete static build.
 
 ## Preview
 
-[![Preview](https://template-1-hollywood.netlify.com/img/demo.jpg)](https://template-1-hollywood.netlify.com/)
+[![Preview](/demo.jpg)](https://filter-image.netlify.com/)
 
-**[View Live Preview](https://template-1-hollywood.netlify.com/)**
+**[View Live Preview](https://filter-image.netlify.com/)**
 
 ### Advanced Usage
 
-After installation, run `npm install` and then run `gulp dev` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+A bit of background to the build. Codepen demo can been seen here: https://codepen.io/theprojectsomething/pen/VKwrjm
 
-#### Gulp Tasks
+See more from: http://www.mattkandler.com/blog/duotone-image-filter-javascript-rails
 
-- `gulp` the default task that builds everything
-- `gulp dev` browserSync opens the project in your default browser and live reloads when changes are made
-- `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-- `gulp js` minifies the themes JS file
-- `gulp vendor` copies dependencies from node_modules to the vendor directory
-
-You must have npm and Gulp installed globally on your machine in order to use these features.
