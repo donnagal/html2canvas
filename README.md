@@ -4,7 +4,7 @@ After downloading, simply edit the HTML and JS file. Not much going on here. Com
 
 ## Preview
 
-[![Preview](/demo.png)](https://filter-image.netlify.com/)
+[![Preview](/screenshot.png)](https://filter-image.netlify.com/)
 
 **[View Live Preview](https://filter-image.netlify.com/)**
 
