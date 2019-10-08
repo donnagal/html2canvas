@@ -6,7 +6,7 @@ var canvas = document.getElementById('image'),
     theImg,
     blendColor = "#F74902",
     contrast = 1.2,
-    blur= '4px',
+    blur= 0,
     ctx = canvas.getContext('2d'),
     fadeTime = 120,
     currentFilter = 'grayscale(100%)',
@@ -34,7 +34,7 @@ function render(src){
     ctx.fillRect(0,0,canvas.width,canvas.height);
     // @TODO find solution for no .filter support in IE or Safari. Consider this approach: https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
     ctx.filter = currentFilter + ' contrast(' + contrast + ')';
-    ctx.filter = currentFilter + ' blur(' + blur + ')';
+    ctx.filter += currentFilter + ' blur(' + blur + 'px)';
     ctx.globalCompositeOperation = currentBlend;
     ctx.drawImage(image, 0, 0, image.width, image.height);
   };
