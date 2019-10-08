@@ -2,37 +2,80 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>DuoTone</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Duo-Toner from AWeber</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css'>
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<h1>Duo<span>Tone</span></h1>
-<small>1920x1080</small>
-<div>
-  <input class="hide color color-a" type="color">
-  <input class="hide color color-b" type="color">
+<div class="browserNotification">For the best possible experience, please use Chrome or Firefox to view this page</div>
 
-  <p>
-      <label for="brightness">Dark-Light</label>
-    <input class="range-bar color color-mid" type="range" min="0.1" max="0.9" step="0.01">
-  </p>
+<div class="screen">
+  <div>
 
-  <p>
-      <label for="blur">Blur:</label>
-      <input id="blur" class="range-bar css-var" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
-  </p>
 
-  <canvas class="hide" id="gradient" width="170" height="30" style="background:blue;"></canvas>
+    <div class="screen2">
+      <h2>All done duo-toning!</h2>
+      <div class="element">
+        <a onclick="startOver()" class="btn btn--secondary">Start Over</a>
+        <a onclick="downloadIt()" class="btn">Download</a>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <div class="screen__elements">
+      <div class="element">
+        <label for="custom"><strong>Pick a color:</strong> </label><input type='text' name="color" id="color" /><br>
+      </div>
 
+      <div class="element advanced">
+        <a onClick="advancedTray(this)">advanced options</a>
+        <div id="advancedOptions" class="advanced__options">
+
+          <label for="contrast"><strong>Contrast:</strong> </label><input id="contrast" type="range" min="0.5" max="2" step="0.1" /><input type="number" id="contrastNum" min="0.5" max="2" step="0.1" /><br>
+          
+          <label for="blur"><strong>Blur:</strong> </label>
+          <input id="blur" type="range" min="0" max="90" step="0.1" />
+          <input type="number" id="blurNum" min="0" max="90" step="0.1" /><br>
+
+
+          <label for="blendMode"><strong>Blend Mode:</strong> </label>
+          <select id="blendMode">
+            <option value="multiply">Multiply</option>
+            <option value="overlay">Overlay</option>
+            <option value="screen">Screen</option>
+            <option value="luminosity">Luminosity</option>
+            <option value="color-dodge">Color Dodge</option>
+            <option value="color-burn">Color Burn</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="screen1">
+        <div id="dropZone">Drop your image here</div>
+
+        <div class="element">
+          <label for="file" class="file">Or choose a file</label>
+          <input type="file" name="file" id="file" accept="image/*" capture>
+        </div>
+      </div>
+
+      <div class="screen2">
+        <div class="screen__elements">
+          <canvas id="image" class="finalImage"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
-<input type="file" accept="image/*">
-<button class="reset">Reset</button>
-<button class="download" disabled>Download</button><br>
-<canvas id="duotone"></canvas>
-<img>
+
+
 <!-- partial -->
-  <script src='https://rawgit.com/theprojectsomething/medium-framework/master/build/medium-framework.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js'></script>
 <script  src="./script.js"></script>
 
 </body>
