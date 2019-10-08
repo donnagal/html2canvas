@@ -28,26 +28,44 @@ function render(src){
   
   image.onload = function(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.width = image.width;
-    canvas.height = image.height;
+    canvas.width = 1920;
+    canvas.height = 1080;
     ctx.fillStyle = blendColor;
     ctx.fillRect(0,0,canvas.width,canvas.height);
     // @TODO find solution for no .filter support in IE or Safari. Consider this approach: https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
     ctx.filter = currentFilter + ' contrast(' + contrast + ')';
     ctx.filter += currentFilter + ' blur(' + blur + 'px)';
     ctx.globalCompositeOperation = currentBlend;
-    ctx.drawImage(image, 0, 0, image.width, image.height);
+
+    // get the scale
+    var scale = Math.max(canvas.width / image.width, canvas.height / image.height);
+   
+    // position image center
+    var x = (canvas.width / 2) - (image.width / 2) * scale;
+    var y = (canvas.height / 2) - (image.height / 2) * scale;
+    ctx.drawImage(image, x, y, image.width * scale, image.height * scale);
+
+    // position image bottom
+    // var x = (canvas.width / 2) - (image.width / 2) * scale;
+    // var y = (canvas.height) - (image.height) * scale;
+    // ctx.drawImage(image, x, y, image.width * scale, image.height * scale);
+
+    // position image top
+    // var x = (canvas.width / 2) - (image.width / 2) * scale;
+    // ctx.drawImage(image, x, 0, image.width * scale, image.height * scale);
+
   };
   
   image.src = src;
 }
 
 
+
 // Download contents on canvas using filesaver.js
 // @Todo investigate bug downloading in Safari
 function downloadIt(){
   canvas.toBlob(function(blob) {
-    saveAs(blob, "duotone.png");
+    saveAs(blob, "image-1920×1080.png");
   }, "image/png");
 }
 
