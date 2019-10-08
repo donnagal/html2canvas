@@ -71,9 +71,9 @@ p a {
   font-weight: 400;
 }
 .advanced__options {
-  background: #e6e6e6;
+  background: white;
   border: 1px solid #CCCCCC;
-  border-radius: 12px;
+  border-radius: 9px;
   display: none;
   padding: 0.5rem;
 }
