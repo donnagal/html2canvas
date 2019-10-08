@@ -1,0 +1,51 @@
+/*!
+ * Template - Template for Tailwind v4.1.1 (https://tailwind-css-template.netlify.com/)
+ * 2019-2019 Donna Galletta
+ * Licensed under MIT (Template for Tailwind/blob/master/LICENSE)
+ */
+.thumbnail {
+  overflow: hidden;
+  margin: auto;
+  width: 1920px;
+  height: 1080px;
+}
+
+.view-img img {
+  display: block;
+  width: 1920px;
+}
+
+#upload {
+  display: none;
+}
+
+.svg-filters {
+  height: 0;
+  left: -9999em;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 0;
+}
+
+.img {
+  width: 1920px;
+}
+
+.duotoned--peachy {
+  filter: url("#duotone_peachypink");
+}
+
+@media print {
+  @page {
+    size: 1920px 1080px;
+    margin: 0mm;
+  }
+  .print-hide {
+    display: none;
+  }
+}
+
+.preview-mode .nav {
+  display: none;
+}
