@@ -8,11 +8,23 @@
 <body>
 <!-- partial:index.partial.html -->
 <h1>Duo<span>Tone</span></h1>
+<small>1920x1080</small>
 <div>
-  <input class="color color-a" type="color">
-  <input class="color color-b" type="color"><br>
-  <input class="color color-mid" type="range" min="0.1" max="0.9" step="0.01">
-  <canvas id="gradient" width="170" height="30" style="background:blue;"></canvas>
+  <input class="hide color color-a" type="color">
+  <input class="hide color color-b" type="color">
+
+  <p>
+      <label for="brightness">Dark-Light</label>
+    <input class="range-bar color color-mid" type="range" min="0.1" max="0.9" step="0.01">
+  </p>
+
+  <p>
+      <label for="blur">Blur:</label>
+      <input id="blur" class="range-bar css-var" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+  </p>
+
+  <canvas class="hide" id="gradient" width="170" height="30" style="background:blue;"></canvas>
+
 </div>
 <input type="file" accept="image/*">
 <button class="reset">Reset</button>

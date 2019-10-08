@@ -1,5 +1,8 @@
+
 // see http://www.mattkandler.com/blog/duotone-image-filter-javascript-rails
 console.clear();
+
+
 
 MediumFramework.View.extend({
   
@@ -30,7 +33,7 @@ MediumFramework.View.extend({
   props: {
     gradient: {
       defaults: {
-        a: "#ff4930",
+        a: "#F74902",
         b: "#ffa494",
         c: "#ffa494",
         mid: 0.5

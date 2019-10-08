@@ -60,10 +60,13 @@ canvas {
   margin: 0 auto;
 }
 
-.color-mid {
+.range-bar {
   width: 170px;
 }
 
 #duotone {
   max-width: 80%;
+}
+.hide {
+  display: none;
 }
