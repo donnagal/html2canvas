@@ -1,154 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, initial-scale=1, viewport-fit=cover">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <link href="img/favicon.png" rel="icon" type="image/x-icon" />
-  
-      <title>image</title>
-      
-      <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-    <link href="css/main.min.css" rel="stylesheet">
-
-      
-  </head>
-
-  <body>
-
-      <div id="app">
-        
-
-          
-
-       
-
-      <div class="print-hide text-center py-10">
-
-          <h1 class="text-xl uppercase mb-16"><strong><em>Filter</em></strong> me image</h1>
-
-          <div class="flex mb-4">
-              <div class="w-1/3">
-                <h3 class="text-lg font-bold mb-3">Step 1:</h3>
-
-          
-                <input type="file" id="upload">
-      
-          
-                <button type="button" class="btn uploadbtn rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
-                bg-gray-500 hover:bg-gray-600 md:text-lg xl:text-base text-white font-semibold 
-                leading-tight shadow-md">Upload</button>
-                
-
-                <p class="text-sm text-gray-600 mt-3 text-center mb-5">    
-                    width: 1920px | height: 1080px
-                </p>
-              </div>
-         
-       <div class="w-1/3">
-                
-          <div class="text-center">
-              <h3 class="text-lg font-bold mb-3">Step 2:</h3>
-
-                         <p class="text-sm mt-4 text-black -ml-32">
-                            Adjust Position <small>optional</small>
-                          </p>
-                         <input class="rounded-lg border px-5 py-3 bg-gray-100 text-gray-700" type="number" v-model="myPosSize">
-                        
-                         <button class="save rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
-                         bg-orange-500 hover:bg-orange-600 md:text-lg xl:text-base text-white font-semibold 
-                         leading-tight shadow-md" onclick="myFunction()">Save</button>
-                         
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Duotone Generator</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="description" content="CSS Duotone">
+  <meta property="og:title" content="CSS Duotone">
+  <meta property="og:description" content="Create CSS Duotones quickly for free">
+  <meta property="og:image:height" content="630"><meta property="og:image:width" content="1200">
+  <meta property="og:url" content="https://cssduotone.com/">
 
 
-                        </div>
-
-                        
-              
-              </div>
-              <div class="w-1/3">
-                <div class="">
-                    <h3 class="text-lg font-bold mb-5">Step 3:</h3>
-                    <p>
-                      <a target="_blank" class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 
-                      bg-gray-500 hover:bg-gray-600 
-                      md:text-lg xl:text-base text-white font-semibold 
-                      leading-tight shadow-md"
-                      href="https://pdftoimage.com/">Convert PDF to Image</a>
-                    </p>
-                    <p class="text-sm mt-4 text-gray-500">
-                      <span class="text-black">Or take your own screen-shot</span>
-                      <br>
-                       Command-Shift-4<br>
-                      PC: Windows + Shift + S
-                    </p>
-                </div>
-            </div>
-            </div>
-
-  
-      
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#f4234f">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Clipboard.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+</head>
+<body class="hide-code">
+  <div class="container">
+    <div id="img-form" class="img-form maintain-ar">
+      <div class="img-wrapper">
+        <object id="img-src" data="https://images.unsplash.com/photo-1547038577-da80abbc4f19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1251&q=80" type="image/png">
+          <img src="./img.jpeg">
+        </object>
       </div>
-
-
-
-    <div class="">
-        <div class="duotone">
-            <!-- Duotone Article Demo -->
-          
-          <svg xmlns="http://www.w3.org/2000/svg" class="svg-filters">
-            <filter id="duotone_peachypink">
-              <feColorMatrix type="matrix" result="grayscale"
-                values="1 0 0 0 0
-                        1 0 0 0 0
-                        1 0 0 0 0
-                        0 0 0 1 0" />
-              
-              <feComponentTransfer color-interpolation-filters="sRGB" result="duotone_magenta_gold">
-                <feFuncR type="table" tableValues="0.0000000000 0.9882352941"></feFuncR>
-                <feFuncG type="table" tableValues="0.0000000000 0.4433333333"></feFuncG>
-                <feFuncB type="table" tableValues="0.0000000000 0.05098039216"></feFuncB>
-                <feFuncA type="table" tableValues="0 1"></feFuncA>
-              </feComponentTransfer> 
-            </filter>
-            
-          
-          
-          
-          <div class="thumbnail bg-black">
-            <div class="view-img">
-              <img class="img duotoned--peachy relative" 
-              :style="{top: myPosSize +'px'}"
-              src="https://images.unsplash.com/photo-1547010487-9b6dee5487cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="">
+      <div id="controls" class="controls">
+        <h2 class="hl">CSS Duotone Generator</h2>
+        <div>
+          <div class="form-group">
+            <label for="file">Upload Image:</label>
+            <input id="file" type="file" name="file">
+          </div>
+          <div class="form-group">
+            <div class="button-group">
+              <button id="new-img-btn">Get random new image</button>
+              <small>Your settings will only reset on page refresh</small>
             </div>
-            
-            
           </div>
+          <div class="form-group">
+            <div class="button-group">
+              <button id="get-css">Generate HTML+CSS</button>
+              <small>Will open modal</small>
+            </div>
           </div>
+          <div class="form-group">
+            <label for="zoom">Zoom</label>
+            <input id="zoom" class="css-var" type="range" name="zoom" min="0.25" max="1" value="1" step="0.01" list="ticks">
+          </div>
+
+          <div class="form-group">
+            <label for="spacing">Spacing:</label>
+            <input id="spacing" class="css-var" type="range" name="spacing" min="0" max="100" value="0" step="1" data-sizing="px">
+          </div>
+
+          <div class="form-group">
+            <label for="blur">Blur:</label>
+            <input id="blur" class="css-var" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+          </div>
+
+          <div class="form-group">
+            <label for="opacity">Image Opacity:</label>
+            <input id="opacity" class="css-var" type="range" name="opacity" min="0" max="1" value="1" step="0.01">
+          </div>
+
+          <div class="form-group">
+            <label for="foreground">Image Color:</label>
+            <input id="foreground" class="css-var" type="color" name="foreground" value="#f24319">
+          </div>
+
+          <div class="form-group">
+            <label for="fg-bled">Image Blend Mode:</label>
+            <select id="fg-blend" class="css-var" name="fg-blend">
+              <option data-filter="unset">unset</option>
+              <option data-filter="multiply">multiply</option>
+              <option data-filter="screen">screen</option>
+              <option data-filter="overlay">overlay</option>
+              <option data-filter="darken">darken</option>
+              <option data-filter="lighten" selected>lighten</option>
+              <option data-filter="color-dodge">color-dodge</option>
+              <option data-filter="color-burn">color-burn</option>
+              <option data-filter="hard-light">hard-light</option>
+              <option data-filter="soft-light">soft-light</option>
+              <option data-filter="difference">difference</option>
+              <option data-filter="exclusion">exclusion</option>
+              <option data-filter="hue">hue</option>
+              <option data-filter="saturation">saturation</option>
+              <option data-filter="color">color</option>
+              <option data-filter="luminosity">luminosity</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="base">Background Color:</label>
+            <input id="base" class="css-var" type="color" name="base" value="#f3d8d0">
+          </div>
+
+          <div class="form-group">
+            <label for="bg-blend">Background Blend Mode:</label>
+            <select id="bg-blend" class="css-var" name="bg-blend">
+              <option data-filter="unset">unset</option>
+              <option data-filter="multiply" selected>multiply</option>
+              <option data-filter="screen">screen</option>
+              <option data-filter="overlay">overlay</option>
+              <option data-filter="darken">darken</option>
+              <option data-filter="lighten">lighten</option>
+              <option data-filter="color-dodge">color-dodge</option>
+              <option data-filter="color-burn">color-burn</option>
+              <option data-filter="hard-light">hard-light</option>
+              <option data-filter="soft-light">soft-light</option>
+              <option data-filter="difference">difference</option>
+              <option data-filter="exclusion">exclusion</option>
+              <option data-filter="hue">hue</option>
+              <option data-filter="saturation">saturation</option>
+              <option data-filter="color">color</option>
+              <option data-filter="luminosity">luminosity</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bg-blend">Premade settings:</label>
+            <div class="button-group">
+              <button class="premade" data-filter="default">Default</button>
+              <button class="premade" data-filter="spotify">Spotify</button>
+              <button class="premade" data-filter="vintage">Vintage</button>
+              <button class="premade" data-filter="blade-runner">Blade Runner</button>
+              <button class="premade" data-filter="laworder">Law & Order</button>
+              <button class="premade" data-filter="moody">Moody</button>
+              <button class="premade" data-filter="ursula">Ursula</button>
+              <button class="premade" data-filter="random">Random</button>
+            </div>
+          </div>
+          <div class="form-group inline">
+            <input id="toggle-ar" type="checkbox">
+            <label for="toggle-ar">Match Viewport Aspect Ratio <kbd data-key="65" class="key">A</kbd></label>
+          </div>
+          <small data-key="72" class="form-group key">
+            Press <kbd>H</kbd> to hide the sidebar (useful for screenshots)
+          </small>
+          <div class="form-group">
+          </div>
+        </div>
+      </div>
     </div>
-
-
-    <div class="print-hide text-center py-10"></div>
-      
   </div>
+  <div class="code-modal">
+    <div class="code-output">
+      <div class="code-header">
+        <h2>HTML + CSS output</h2>
+        <!-- Form To Submit To Codepen To Create New Pen -->
+        <form action="https://codepen.io/pen/define" method="POST" target="_blank">
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-              
-    <!-- Plugin JavaScript -->
+          <!-- We'll populate the value with the data to post to codepen here. -->
+          <input id="codepen-input" type="hidden" name="data" value="">
+
+          <!-- Fancy Pants CodePen Submit Button. -->
+          <input id="codepen-submit" type="submit" value="Open in CodePen" class="codepen-mover-button">
+
+        </form>
+        <button id="copy-to-clipboard" data-clipboard-text class="button">Copy to Clipboard</button>
+        <button id="hide-modal-screen" class="button">Close Modal</button>
+      </div>
+<pre class="codepen-able">
+<code>&lt;!-- Styles. Can be included in an external stylesheet  --&gt;
+
+&lt;style&gt;</code>
+<code id="css-code" class="language-css">/* CSS variables. Not needed for the effect to work. */
+:root {
+  --base:              <span id="var-base">#f3d8d0</span>;
+  --bg-blend:          <span id="var-bg-blend">multiply</span>;
+  --blur:              <span id="var-blur">0px</span>;
+  --fg-blend:          <span id="var-fg-blend">lighten</span>;
+  --foreground:        <span id="var-foreground">#f24319</span>;
+  --opacity:           <span id="var-opacity">1</span>;
+  --spacing:           <span id="var-spacing">0</span>;
+}
+.img-wrapper {
+  background-color:    var(--base);
+  display:             flex;
+  flex:                1 1 100%;
+  height:              100%;
+  overflow:            hidden;
+  padding:             var(--spacing);
+  position:            relative;
+}
+
+.img-wrapper img {
+  filter:              grayscale(100%) contrast(1) blur(var(--blur));
+  flex:                1 0 100%;
+  height:              100%;
+  max-width:           100%;
+  mix-blend-mode:      var(--bg-blend);
+  object-fit:          cover;
+  opacity:             var(--opacity);
+  position:            relative;
+  width:               100%;
+}
+
+.img-wrapper::before {
+  background-color:    var(--foreground);
+  bottom:              0;
+  content:             '';
+  height:              100%;
+  left:                0;
+  mix-blend-mode:      var(--fg-blend);
+  position:            absolute;
+  right:               0;
+  top:                 0;
+  width:               100%;
+  z-index:             1;
+}
+</code>
+&lt;/style&gt;
+<code id="html-code">&lt;!-- HTML Markup --&gt;
+
+&lt;!-- You should think of `img-wrapper` as the image itself. This element is what you should target for sizing/styling. --&gt;
+&lt;div class=&quot;img-wrapper&quot;&gt;
+  &lt;!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. --&gt;
+  &lt;img src=&quot;<span id="random-img">https://images.unsplash.com/photo-1547038577-da80abbc4f19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1251&q=80</span>&quot;&gt;
+&lt;/div&gt;
+</code>
+  </pre>
+</code>
+</pre>
+
+    </div>
+    <div id="modal-screen" class="modal-screen"></div>
+  </div>
+  <script>
+    const inputs = document.querySelectorAll('.controls input.css-var');
+    const selects = document.querySelectorAll('.controls select.css-var');
+
+    function handleUpdate() {
+      const suffix = this.dataset.sizing || '';
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      const cssVarElem = document.getElementById(`var-${this.name}`);
+      if (!cssVarElem) return;
+      cssVarElem.textContent = `${this.value + suffix}`;
+    }
+
+    inputs.forEach( input => input.addEventListener('input', handleUpdate));
+    selects.forEach( select => select.addEventListener('change', handleUpdate));
+
+    var element = document.getElementById('img-form');
+    var trigger = document.getElementById('toggle-ar'); // or whatever triggers the toggle
+
+    // File upload
+    window.addEventListener('load', function() {
+      document.querySelector('input[type="file"]').addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+          const img = document.getElementById('img-src');
+          const url = URL.createObjectURL(this.files[0]);
+          URL.revokeObjectURL(img.data);
+          img.data = url; // set object data to file url
+          img.onload = imageIsLoaded; // optional onload event listener
+        }
+      });
+    });
+
+    function imageIsLoaded(e){ }
+
+    // toggle sidebar
+    var controls = document.getElementById('controls');
+    window.addEventListener('keydown', function(e) {
+      if (e.key === "h"){
+        controls.classList.toggle('hide-sidebar'); // or whatever your active class is
+      }else if (e.key === "a") {
+        element.classList.toggle('maintain-ar');
+        if (trigger.checked === true){
+          trigger.checked = false;
+        } else {
+          trigger.checked = true;
+        }
+      } else {
+        return;
+      }
+    });
+
+    trigger.addEventListener( 'change', function() {
+      element.classList.toggle('maintain-ar'); // or whatever your active class is
+    });
+
+    // Premade selections fillings
+    const premades = document.querySelectorAll('.controls .premade'); //Fetch all .premade element
+    const bg = document.getElementById("base");
+    const fg = document.getElementById("foreground");
+    const opacity = document.getElementById("opacity");
+    const root = document.documentElement;
+    const blendArray = [
+      "unset",
+      "multiply",
+      "screen",
+      "overlay",
+      "darken",
+      "lighten",
+      "color-dodge",
+      "color-burn",
+      "hard-light",
+      "soft-light",
+      "difference",
+      "exclusion",
+      "hue",
+      "saturation",
+      "color",
+      "luminosity"
+    ];
+    const get_rand_int = (max) => Math.floor(Math.random() * max);
+    const get_rand_color = () => '#' + get_rand_int(1 + 0xffffff).toString(16).padStart(6, '0');
+
+    function handleClickUpdate(e) {
+      e.preventDefault();
+      const filter = this.dataset.filter;
+      switch (filter) {
+        case 'default':
+          root.style.setProperty("--base", "#f3d8d0");
+          root.style.setProperty("--foreground", "#f24319");
+          root.style.setProperty("--bg-blend", "multiply");
+          root.style.setProperty("--fg-blend", "lighten");
+          root.style.setProperty("--opacity", "1");
+          document.getElementById("var-base").innerHTML = "#f3d8d0";
+          document.getElementById("var-foreground").innerHTML = "#f24319";
+          document.getElementById("var-bg-blend").innerHTML = "multiply";
+          document.getElementById("var-fg-blend").innerHTML = "lighten";
+          document.getElementById("var-opacity").innerHTML = "1";
+          bg.value = "#f3d8d0";
+          fg.value = "#f24319";
+          document.querySelector('#bg-blend [data-filter="multiply"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="lighten"]').selected = true;
+          opacity.value = 1;
+          break;
+        case 'spotify':
+          root.style.setProperty("--base", "#08b76c");
+          root.style.setProperty("--foreground", "#0a3463");
+          root.style.setProperty("--bg-blend", "multiply");
+          root.style.setProperty("--fg-blend", "lighten");
+          root.style.setProperty("--opacity", "1");
+          document.getElementById("var-base").innerHTML = "#08b76c";
+          document.getElementById("var-foreground").innerHTML = "#0a3463";
+          document.getElementById("var-bg-blend").innerHTML = "multiply";
+          document.getElementById("var-fg-blend").innerHTML = "lighten";
+          document.getElementById("var-opacity").innerHTML = "1";
+          bg.value = "#08b76c";
+          fg.value = "#0a3463";
+          document.querySelector('#bg-blend [data-filter="multiply"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="lighten"]').selected = true;
+          opacity.value = 1;
+          break;
+        case 'vintage':
+          root.style.setProperty("--base", "#e9e9d2");
+          root.style.setProperty("--foreground", "#514442");
+          root.style.setProperty("--bg-blend", "color-burn");
+          root.style.setProperty("--fg-blend", "screen");
+          root.style.setProperty("--opacity", "0.8");
+          document.getElementById("var-base").innerHTML = "#e9e9d2";
+          document.getElementById("var-foreground").innerHTML = "#514442";
+          document.getElementById("var-bg-blend").innerHTML = "color-burn";
+          document.getElementById("var-fg-blend").innerHTML = "screen";
+          document.getElementById("var-opacity").innerHTML = "0.8";
+          bg.value = "#e9e9d2";
+          fg.value = "#514442";
+          document.querySelector('#bg-blend [data-filter="color-burn"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="screen"]').selected = true;
+          opacity.value = 0.8;
+          break;
+        case 'blade-runner':
+          root.style.setProperty("--base", "#8c9da4");
+          root.style.setProperty("--foreground", "#618cf5");
+          root.style.setProperty("--bg-blend", "overlay");
+          root.style.setProperty("--fg-blend", "color-burn");
+          root.style.setProperty("--opacity", "0.5");
+          document.getElementById("var-base").innerHTML = "#8c9da4";
+          document.getElementById("var-foreground").innerHTML = "#618cf5";
+          document.getElementById("var-bg-blend").innerHTML = "overlay";
+          document.getElementById("var-fg-blend").innerHTML = "color-burn";
+          document.getElementById("var-opacity").innerHTML = "0.5";
+          bg.value = "#8c9da4";
+          fg.value = "#618cf5";
+          document.querySelector('#bg-blend [data-filter="overlay"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="color-burn"]').selected = true;
+          opacity.value = 0.5;
+          break;
+        case 'laworder':
+          root.style.setProperty("--base", "#000000");
+          root.style.setProperty("--foreground", "#c35655");
+          root.style.setProperty("--bg-blend", "unset");
+          root.style.setProperty("--fg-blend", "color-burn");
+          root.style.setProperty("--opacity", "1");
+          document.getElementById("var-base").innerHTML = "#000000";
+          document.getElementById("var-foreground").innerHTML = "#c35655";
+          document.getElementById("var-bg-blend").innerHTML = "unset";
+          document.getElementById("var-fg-blend").innerHTML = "color-burn";
+          document.getElementById("var-opacity").innerHTML = "1";
+          bg.value = "#000000";
+          fg.value = "#c35655";
+          opacity.value = 1;
+          document.querySelector('#bg-blend [data-filter="unset"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="screen"]').selected = true;
+          break;
+        case 'moody':
+          root.style.setProperty("--base", "#000000");
+          root.style.setProperty("--foreground", "#1d1d37");
+          root.style.setProperty("--bg-blend", "screen");
+          root.style.setProperty("--fg-blend", "exclusion");
+          root.style.setProperty("--opacity", "0.7");
+          document.getElementById("var-base").innerHTML = "#000000";
+          document.getElementById("var-foreground").innerHTML = "#1d1d37";
+          document.getElementById("var-bg-blend").innerHTML = "screen";
+          document.getElementById("var-fg-blend").innerHTML = "exclusion";
+          document.getElementById("var-opacity").innerHTML = "0.7";
+          bg.value = "#000000";
+          fg.value = "#1d1d37";
+          opacity.value = 0.7;
+          document.querySelector('#bg-blend [data-filter="screen"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="exclusion"]').selected = true;
+          break;
+        case 'ursula':
+          root.style.setProperty("--base", "#9630c3");
+          root.style.setProperty("--foreground", "#45c7ab");
+          root.style.setProperty("--bg-blend", "lighten");
+          root.style.setProperty("--fg-blend", "soft-light");
+          root.style.setProperty("--opacity", "1");
+          document.getElementById("var-base").innerHTML = "#9630c3";
+          document.getElementById("var-foreground").innerHTML = "#45c7ab";
+          document.getElementById("var-bg-blend").innerHTML = "lighten";
+          document.getElementById("var-fg-blend").innerHTML = "soft-light";
+          document.getElementById("var-opacity").innerHTML = "1";
+          bg.value = "#9630c3";
+          fg.value = "#45c7ab";
+          opacity.value = 1;
+          document.querySelector('#bg-blend [data-filter="lighten"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="soft-light"]').selected = true;
+          break;
+        case 'random':
+          const random_bg = get_rand_color();
+          const random_fg = get_rand_color();
+          const random_opacity = Math.random() * (1 - .5) + .5;
+          const random_bg_blend = blendArray[get_rand_int(blendArray.length)];
+          const random_fg_blend = blendArray[get_rand_int(blendArray.length)];
+          root.style.setProperty("--base", random_bg);
+          root.style.setProperty("--foreground", random_fg);
+          root.style.setProperty("--bg-blend", random_bg_blend);
+          root.style.setProperty("--fg-blend", random_fg_blend);
+          root.style.setProperty("--opacity", random_opacity);
+          document.getElementById("var-base").innerHTML = `${random_bg}`;
+          document.getElementById("var-foreground").innerHTML = `${random_fg}`;
+          document.getElementById("var-bg-blend").innerHTML = `${random_bg_blend}`;
+          document.getElementById("var-fg-blend").innerHTML = `${random_fg_blend}`;
+          document.getElementById("var-opacity").innerHTML = `${random_opacity}`;
+          bg.value = random_bg;
+          fg.value = random_fg;
+          opacity.value = random_opacity;
+          document.querySelector('#bg-blend [data-filter="' + random_bg_blend + '"]').selected = true;
+          document.querySelector('#fg-blend [data-filter="' + random_fg_blend + '"]').selected = true;
+          break;
+        default:
+          console.log('Error: No filter found.');
+      }
+    }
+    premades.forEach( premade => premade.addEventListener('click', handleClickUpdate)); //Attach click listener on each premade buttons that triggers function
+
+    // Get new random img
+    const img_url = "https://picsum.photos/1000?random";
+    const img_element = document.getElementById('img-src');
+    const codepen_img_element = document.getElementById('random-img');
+    const new_img_btn = document.getElementById('new-img-btn');
+
+    new_img_btn.addEventListener('click', async function() {
+      const response = await fetch(img_url);
+      codepen_img_element.textContent = response.url;
+      img_element.setAttribute("data", response.url);
+      document.querySelector('input[type="file"]').value = ""; //reset file upload if user has previously uploaded an image before hitting random
+    });
+
+    // Launch modal window
+    const get_css_button = document.getElementById('get-css');
+    get_css_button.addEventListener('click', function(){
+      document.body.classList.toggle('hide-code');
+    });
+     document.getElementById('modal-screen').addEventListener('click', function(){
+       document.body.classList.toggle('hide-code');
+     });
+     document.getElementById('hide-modal-screen').addEventListener('click', function(){
+       document.body.classList.toggle('hide-code');
+     });
+
+    // Codepen output
+
+    // Strip out html function
+    function strip(html) {
+      var tmp = document.createElement("DIV");
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || "";
+    }
+
+    // Replace Quotes and Set Object as String Function
+    setDataString = function (data){
+      let string = JSON.stringify(data);
+      string = string.replace(/"/g, "&quot;");
+      string = string.replace(/'/g, "&apos;");
+      return string;
+    };
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-    
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script>
-        
-    <script src="js/main.min.js"></script>
-  </body>
+    // Codepen Object
+    const data = {
+     title              : "My CSSDuotone",
+     description        : "Created using CSSduotone.com/",
+     html               : "",
+     css                : "",
+     editors            : "110",
+    };
 
+
+    const codepenSubmit = document.getElementById('codepen-submit');
+
+
+    codepenSubmit.addEventListener('click', function(e){
+      // Get the text inside the code tag
+      const htmlCode = document.getElementById('html-code').innerHTML;
+      const cssCode = document.getElementById('css-code').innerHTML;
+      // Strip html first
+      const strippedCSS = strip(cssCode);
+      const strippedHTML = strip(htmlCode);
+      //Combined HTML + CSS
+      const strippedCode = "<style> \n" + strippedCSS + "\n </style> \n" + strippedHTML;
+      data.css = strippedCSS;
+      data.html = strippedHTML;
+      // Replace Quotes and Set Object as String
+      const dataString = setDataString(data);
+      // Get Input and Append Data String
+      const data_input = document.getElementById('codepen-input');
+      data_input.value = dataString;
+    });
+
+    // Copy code to Clipboard
+    var copyBtn = document.getElementById('copy-to-clipboard');
+    copyBtn.addEventListener("click", function() {
+      // Get the text inside the code tag
+      const htmlCode = document.getElementById('html-code').innerHTML;
+      const cssCode = document.getElementById('css-code').innerHTML;
+      // Strip html first
+      const strippedCSS = strip(cssCode);
+      const strippedHTML = strip(htmlCode);
+      //Combined HTML + CSS
+      const strippedCode = "<style> \n" + strippedCSS + "\n </style> \n" + strippedHTML;
+      copyBtn.setAttribute('data-clipboard-text', strippedCode);
+    });
+    var clipboard = new ClipboardJS(copyBtn);
+    clipboard.on('success', function(e) {
+        copyBtn.classList.add('copied');
+        setTimeout(function(){
+          copyBtn.classList.remove('copied');
+        }, 2000);
+    });
+    clipboard.on('error', function(e) {
+      copyBtn.classList.add('copy-error');
+      setTimeout(function(){
+        copyBtn.classList.remove('copy-error');
+      }, 2000);
+    });
+
+
+
+  </script>
+
+</body>
 </html>
