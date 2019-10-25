@@ -6,7 +6,7 @@ var canvas = document.getElementById('image'),
     theImg,
     blendColor = "#F74902",
     contrast = 1.2,
-    brightness = 1.2,
+    brightness = 1.0,
     blur= 0,
     ctx = canvas.getContext('2d'),
     fadeTime = 120,
@@ -35,7 +35,7 @@ function render(src){
     ctx.fillRect(0,0,canvas.width,canvas.height);
     // @TODO find solution for no .filter support in IE or Safari. Consider this approach: https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
     ctx.filter = currentFilter + ' contrast(' + contrast + ')';
-    ctx.filter = currentFilter + ' brightness(' + brightness + ')';
+    ctx.filter += currentFilter + ' brightness(' + brightness + ')';
     ctx.filter += currentFilter + ' blur(' + blur + 'px)';
     ctx.globalCompositeOperation = currentBlend;
 
@@ -156,13 +156,13 @@ function contrastChange(inpt, inpt2){
 contrastChange('#contrast', '#contrastNum');
 contrastChange('#contrastNum', '#contrast');
 
-// Init Brightness Slider
+// Init brightness Slider
 $('#brightness').val(brightness);
 $('#brightnessNum').val(brightness);
-function brightnessChange(inpt, inpt2){
-  $(inpt).on('input', function(){
+function brightnessChange(inpt3, inpt4){
+  $(inpt3).on('input', function(){
     brightness = $(this).val();
-    $(inpt2).val(brightness);
+    $(inpt4).val(brightness);
     if(theImg){
       loadImage(theImg);
     }
@@ -171,15 +171,13 @@ function brightnessChange(inpt, inpt2){
 brightnessChange('#brightness', '#brightnessNum');
 brightnessChange('#brightnessNum', '#brightness');
 
-
-
 // Init Blur Slider
 $('#blur').val(blur);
 $('#blurNum').val(blur);
-function blurChange(inpt3, inpt4){
-  $(inpt3).on('input', function(){
+function blurChange(inpt5, inpt6){
+  $(inpt5).on('input', function(){
     blur = $(this).val();
-    $(inpt4).val(blur);
+    $(inpt6).val(blur);
     if(theImg){
       loadImage(theImg);
     }

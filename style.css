@@ -183,3 +183,7 @@ input[type="file"] {
   border-color: #F74902;
   margin-top: -1px;
 }
+
+.hide {
+  display: none;
+}
