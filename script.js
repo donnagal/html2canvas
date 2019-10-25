@@ -13,6 +13,7 @@ var canvas = document.getElementById('image'),
     currentFilter = 'grayscale(100%)',
     currentBlend = 'multiply';
 
+
 // Pass image to render function
 function loadImage(src){
   var reader = new FileReader();
