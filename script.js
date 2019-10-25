@@ -159,10 +159,10 @@ contrastChange('#contrastNum', '#contrast');
 // Init brightness Slider
 $('#brightness').val(brightness);
 $('#brightnessNum').val(brightness);
-function brightnessChange(inpt3, inpt4){
-  $(inpt3).on('input', function(){
+function brightnessChange(inpt, inpt2){
+  $(inpt).on('input', function(){
     brightness = $(this).val();
-    $(inpt4).val(brightness);
+    $(inpt2).val(brightness);
     if(theImg){
       loadImage(theImg);
     }
@@ -174,10 +174,10 @@ brightnessChange('#brightnessNum', '#brightness');
 // Init Blur Slider
 $('#blur').val(blur);
 $('#blurNum').val(blur);
-function blurChange(inpt5, inpt6){
-  $(inpt5).on('input', function(){
+function blurChange(inpt, inpt2){
+  $(inpt).on('input', function(){
     blur = $(this).val();
-    $(inpt6).val(blur);
+    $(inpt2).val(blur);
     if(theImg){
       loadImage(theImg);
     }
