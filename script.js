@@ -5,7 +5,7 @@ var canvas = document.getElementById('image'),
     input = document.getElementById('file'),
     theImg,
     blendColor = "#F74902",
-    contrast = 1.2,
+    contrast = 1.0,
     brightness = 1.0,
     blur= 0,
     ctx = canvas.getContext('2d'),
@@ -30,8 +30,13 @@ function render(src){
   
   image.onload = function(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.width = 1920;
-    canvas.height = 1080;
+    // canvas.width = 1920;
+    // canvas.height = 1080;
+
+    // canvas.width = 2480;
+    // canvas.height = 3508;
+
+
     ctx.fillStyle = blendColor;
     ctx.fillRect(0,0,canvas.width,canvas.height);
     // @TODO find solution for no .filter support in IE or Safari. Consider this approach: https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
@@ -74,7 +79,7 @@ function render(src){
 // @Todo investigate bug downloading in Safari
 function downloadIt(){
   canvas.toBlob(function(blob) {
-    saveAs(blob, "image-1920×1080.png");
+    saveAs(blob, "image.png");
   }, "image/png");
 }
 
@@ -82,6 +87,8 @@ function downloadIt(){
 // Go back to first step and reset canvas
 function startOver(){
   screenFade();
+  $( ".btn-a4" ).removeClass( "disabled" );
+  $(".btn-a4").prop('disabled', false);
 }
 
 
@@ -95,6 +102,8 @@ function screenFade(){
           marginTop: '0',
           opacity: '1'
         }, 300);
+        $( ".btn-a4" ).addClass( "disabled" );
+        $(".btn-a4").prop('disabled', true);
       });
     });
   }
@@ -202,15 +211,46 @@ $('#blendMode').on('input', function(){
 });
 
 
-// Slide open advanced tray
-function advancedTray(trig){
-  $(trig).fadeOut(200, function(){
-    $('#advancedOptions').fadeIn();
-  });
-}
 
 
+//Active button classes
 $('.btn-group').on('click', 'button', function() {
   $(this).switchClass( 'border-white', 'border-iso', 0)
   .siblings().switchClass( 'border-iso', 'border-white', 0)
 });
+
+
+
+$(".btn-a4").click(function(){
+  $("#dropZone").toggleClass("drop-zone_a4") 
+
+  var c = $("#image"), 
+        ctx = c[0].getContext('2d');
+
+    var draw = function(){  
+    };
+
+    $(function(){
+        // set width and height
+         ctx.canvas.height = 3508;
+         ctx.canvas.width = 2480;
+        // draw
+        draw();
+
+        // wait 2 seconds, repeate same process
+        setTimeout(function(){
+            ctx.canvas.height = 3508;
+            ctx.canvas.width = 2480;
+            draw();
+        }, 2000)
+    });
+});
+
+
+
+$(".btn-screen").click(function(){
+  location.reload(); 
+});
+
+
+
