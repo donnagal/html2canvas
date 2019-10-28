@@ -212,39 +212,17 @@ $('#blendMode').on('input', function(){
 
 
 
-
 //Active button classes
 $('.btn-group').on('click', 'button', function() {
   $(this).switchClass( 'border-white', 'border-iso', 0)
   .siblings().switchClass( 'border-iso', 'border-white', 0)
 });
 
-
-
-$(".btn-a4").click(function(){
-  $("#dropZone").toggleClass("drop-zone_a4") 
-
-  var c = $("#image"), 
-        ctx = c[0].getContext('2d');
-
-    var draw = function(){  
-    };
-
-    $(function(){
-        // set width and height
-         ctx.canvas.height = 3508;
-         ctx.canvas.width = 2480;
-        // draw
-        draw();
-
-        // wait 2 seconds, repeate same process
-        setTimeout(function(){
-            ctx.canvas.height = 3508;
-            ctx.canvas.width = 2480;
-            draw();
-        }, 2000)
-    });
+$('.btn-group-bg').on('click', 'button', function() {
+  $(this).switchClass( 'bg-white', 'bg-iso', 0)
+  .siblings().switchClass( 'bg-iso', 'bg-white', 0)
 });
+
 
 
 
@@ -254,3 +232,21 @@ $(".btn-screen").click(function(){
 
 
 
+// A4 ratio 
+$(".btn-a4").click(function(){
+  $("#dropZone").toggleClass("drop-zone_a4") 
+
+  var c = $("#image"), 
+        ctx = c[0].getContext('2d');
+    $(function(){
+        // set width and height
+         ctx.canvas.height = 3508;
+         ctx.canvas.width = 2480;
+
+        // wait 2 seconds, repeate same process
+        setTimeout(function(){
+            ctx.canvas.height = 3508;
+            ctx.canvas.width = 2480;
+        }, 2000)
+    });
+});
