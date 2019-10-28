@@ -42,11 +42,15 @@ function render(src){
 
     // get the scale
     var scale = Math.max(canvas.width / image.width, canvas.height / image.height);
-   
-    // position image center
+
     var x = (canvas.width / 2) - (image.width / 2) * scale;
     var y = (canvas.height / 2) - (image.height / 2) * scale;
     ctx.drawImage(image, x, y, image.width * scale, image.height * scale);
+    
+    // position image center
+    // var x = (canvas.width / 2) - (image.width / 2) * scale;
+    // var y = (canvas.height / 2) - (image.height / 2) * scale;
+    // ctx.drawImage(image, x, y, image.width * scale, image.height * scale);
 
     // position image bottom
     // var x = (canvas.width / 2) - (image.width / 2) * scale;
@@ -61,6 +65,8 @@ function render(src){
   
   image.src = src;
 }
+
+
 
 
 
