@@ -154,3 +154,7 @@ input[type=number] {
   background: #808080;
   cursor: pointer;
 }
+
+button:focus{
+  outline: none !important;
+}

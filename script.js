@@ -208,3 +208,9 @@ function advancedTray(trig){
     $('#advancedOptions').fadeIn();
   });
 }
+
+
+$('.btn-group').on('click', 'button', function() {
+  $(this).switchClass( 'border-white', 'border-iso', 0)
+  .siblings().switchClass( 'border-iso', 'border-white', 0)
+});
