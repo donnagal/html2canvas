@@ -30,8 +30,28 @@ function render(src){
   
   image.onload = function(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // canvas.width = 1920;
-    // canvas.height = 1080;
+    canvas.width = 1920;
+    canvas.height = 1080;
+
+
+// A4 ratio 
+$(".btn-a4").click(function(){
+  $("#dropZone").toggleClass("drop-zone_a4") 
+
+  var c = $("#image"), 
+        ctx = c[0].getContext('2d');
+    $(function(){
+        // set width and height
+         ctx.canvas.height = 3508;
+         ctx.canvas.width = 2480;
+
+        // wait 2 seconds, repeate same process
+        setTimeout(function(){
+            ctx.canvas.height = 3508;
+            ctx.canvas.width = 2480;
+        }, 2000)
+    });
+});
 
     // canvas.width = 2480;
     // canvas.height = 3508;
@@ -224,29 +244,8 @@ $('.btn-group-bg').on('click', 'button', function() {
 });
 
 
-
-
 $(".btn-screen").click(function(){
   location.reload(); 
 });
 
 
-
-// A4 ratio 
-$(".btn-a4").click(function(){
-  $("#dropZone").toggleClass("drop-zone_a4") 
-
-  var c = $("#image"), 
-        ctx = c[0].getContext('2d');
-    $(function(){
-        // set width and height
-         ctx.canvas.height = 3508;
-         ctx.canvas.width = 2480;
-
-        // wait 2 seconds, repeate same process
-        setTimeout(function(){
-            ctx.canvas.height = 3508;
-            ctx.canvas.width = 2480;
-        }, 2000)
-    });
-});
