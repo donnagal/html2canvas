@@ -12,7 +12,7 @@
 
 
 <header>
-    <div class="bg-white -mt-2 mb-4">
+    <div class="bg-white -mt-2 mb-8">
         <svg class="fill-current text-iso inline-block h-24 w-24" enable-background="new 0 0 55.4 16.1" version="1.1" viewBox="0 0 55.4 16.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
           <path class="svg-logo" d="m1.4 3.2c-0.8 0-1.4-0.6-1.4-1.4s0.6-1.5 1.4-1.5 1.5 0.7 1.5 1.5-0.7 1.4-1.5 1.4"></path>
           <path class="svg-logo" d="m50 15.8v-11.1h2.5v1.1 0.3c0.1-0.6 1.1-1.6 2.8-1.7v2.7c-1.3 0.1-2.7 0.5-2.7 2.4v6.3h-2.6z"></path>
@@ -35,29 +35,38 @@
 
   
   <div>
-    <div class="screen__elements">
+    <div class="font-light ">
 
       <div class="flex mb-4 text-black">
           <div class="w-1/3">
-            <p class="mb-2">Pick an aspect ratio</p>
-            <button class="bg-white hover:border-white border-iso border-4 text-black text-xs py-5 px-8 rounded">Screen</button>
+            <p class="mb-2 -ml-5">Pick an aspect ratio</p>
+            <button class="bg-white hover:border-white border-iso border-4 text-black text-xs py-5 px-8 rounded mr-2">Screen</button>
             <button class="bg-white hover:border-iso border-white border-4 text-black text-xs py-5 px-3 rounded">A4</button>
 
           </div>
           <div class="w-1/3">
-            <div class="">
-                <label for="contrast"><strong>Contrast:</strong> </label><input id="contrast" type="range" min="0.5" max="2" step="0.1" /><input type="number" id="contrastNum" min="0.5" max="2" step="0.1" /><br>
-                <label for="brightness"><strong>brightness:</strong> </label><input id="brightness" type="range" min="0.5" max="2" step="0.1" /><input type="number" id="brightnessNum" min="0.5" max="2" step="0.1" /><br>
-      
-                <label for="blur"><strong>Blur:</strong> </label>
-                <input id="blur" type="range" min="0" max="90" step="0.1" />
-                <input type="number" id="blurNum" min="0" max="90" step="0.1" /><br>
-      
+            <div class="flex mb-4">
+                <div class="w-1/3 text-right mr-3">
+                  <label for="contrast">Contrast </label> 
+                  <p class="my-3"><label for="brightness">Brightness </label> </p>
+                  <label for="blur">Blur </label>
+                </div>
+                <div class="w-1/3">
+                  <input id="contrast" type="range" class="slider" min="0.5" max="2" step="0.1" /> 
+                  <p class="my-3"><input id="brightness" type="range" class="slider" min="0.5" max="2" step="0.1" /></p>
+                  <input id="blur" type="range" class="slider" min="0" max="90" step="0.1" />
+                </div>
+                <div class="w-1/3 text-xs iso-input">
+                  <input type="number" id="contrastNum" min="0.5" max="2" step="0.1" /> 
+                  <p class="my-3"><input type="number" id="brightnessNum" min="0.5" max="2" step="0.1" /></p>
+                  <input type="number" id="blurNum" min="0" max="90" step="0.1" />
+                </div>
               </div>
+
           </div>
           <div class="w-1/3">
-                  <label for="custom"><strong>Pick a color:</strong> </label><input type='text' name="color" id="color" /><br>
-
+                  <label for="custom">Pick a color</label><br>
+                  <input type='text' name="color" id="color" />
           </div>
         </div>
 
@@ -76,12 +85,12 @@
       </div>
 
       <div class="screen2">
-        <div class="screen__elements">
+        <div class="rounded-lg">
           <canvas id="image" class="finalImage"></canvas>
         </div>
         <div class="">
-            <a onclick="downloadIt()" class="btn-downlaod bg-iso hover:bg-iso text-light text-white py-2 px-5 rounded">Download</a>
-            <a onclick="startOver()" class="btn-startover bg-transparent hover:bg-white text-white hover:text-iso text-xs py-2 px-4 border-2 border-white hover:border-transparent rounded">Start Over</a>
+            <a onclick="downloadIt()" class="btn-downlaod bg-iso hover:bg-iso font-normal text-white py-2 px-8 rounded">Download</a>
+            <a onclick="startOver()" class="btn-startover bg-transparent hover:bg-white text-white hover:text-iso text-xs py-2 px-5 border-2 border-white hover:border-transparent rounded">Start Over</a>
           </div>
       </div>
 
