@@ -30,8 +30,9 @@ function render(src){
   
   image.onload = function(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.width = 1920;
-    canvas.height = 1080;
+
+    canvas.width = 2480;
+    canvas.height = 3508;
 
 
     ctx.fillStyle = blendColor;
@@ -195,7 +196,6 @@ $('#blendMode').on('input', function(){
 });
 
 
-
 //Active button classes
 $('.btn-group').on('click', 'button', function() {
   $(this).switchClass( 'border-white', 'border-iso', 0)
@@ -208,6 +208,9 @@ $('.btn-group-bg').on('click', 'button', function() {
 });
 
 
+$(".btn-screen").click(function(){
+  location.reload(); 
+});
 
 
   
