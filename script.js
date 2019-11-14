@@ -208,6 +208,3 @@ $('.btn-group-bg').on('click', 'button', function() {
 });
 
 
-
-
-  
